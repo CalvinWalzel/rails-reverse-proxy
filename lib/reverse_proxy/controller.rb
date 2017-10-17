@@ -8,7 +8,7 @@ module ReverseProxy
       client = ReverseProxy::Client.new(proxy_url) do |config|
         config.on_response do |code, response|
           blacklist = [
-            'Connection',           # Always close connection
+            # 'Connection',           # Always close connection
             'Transfer-Encoding',    # Let Rails calculate this
             'Content-Length'        # Let Rails calculate this
           ]
